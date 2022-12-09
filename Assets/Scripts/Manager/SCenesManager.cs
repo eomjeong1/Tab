@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +7,7 @@ public enum Scene
 {
         Menu,
         Main,
-        Battle
+        Battle 
 }
 public class SCenesManager : MonoBehaviour
 {
@@ -32,9 +31,11 @@ public class SCenesManager : MonoBehaviour
     public Scene PrevScene;
     public void ChangeScene(Scene scene)
     {
-        PrevScene = currentScene;
+        TabUI.GetInstance().ClearList(); // 씬이 바뀔때마다 UI매니저를 클리어해주겠다.
+       // PrevScene = currentScene;
         currentScene = scene;
         SceneManager.LoadScene(scene.ToString());
+
     }
     #endregion
 }

@@ -64,6 +64,20 @@ public class TabUI : MonoBehaviour
             uiList[uiName].SetActive(false);
         }
     }
+    
+
+    public GameObject GetUI(string uiName)
+    {
+       if(uiList.ContainsKey(uiName))
+            return uiList[uiName];
+
+        return null; // 실제로 null을 많이 이용함.
+    }
+
+    public void ClearList()
+    { 
+        uiList.Clear();
+    }
     #endregion  
 }
 

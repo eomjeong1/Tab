@@ -22,8 +22,48 @@ public class ObjectManager : MonoBehaviour
 
     public GameObject CreateCharacter()
     {
-        Object characterObj = Resources.Load("Sprite/Character");
-        GameObject character = (GameObject)Instantiate(characterObj);
-        return character;
+        Object characterObj = Resources.Load("Sprite/Character"); // 리소스폴더에서 스프라이트 - 캐릭터라는 친구를 로드할거야.
+        GameObject character = (GameObject)Instantiate(characterObj); //불러온 캐릭터라는 친구를 인스턴스화 할거야.
+        return character; // void만 return이 없어도 가능하다.
+    }
+
+    public GameObject CreateMonster()
+    {
+        Object MonsterObj = Resources.Load("Sprite/Monster1");
+        GameObject monster = (GameObject)Instantiate(MonsterObj);
+
+        return monster;
+    }
+
+    public ParticleSystem CreateHitEffect()
+    {
+        Object EffectObj = Resources.Load("Effect/Hit2");
+        GameObject effect = (GameObject)Instantiate(EffectObj);
+
+        return effect.GetComponent<ParticleSystem>();
+    }
+
+    public GameObject ImgVictory()
+    {
+        Object SCImg = Resources.Load("Sprite/SC");
+        GameObject SC = (GameObject)Instantiate(SCImg);
+
+        return SC;
+    }
+    public GameObject ImgTimeOver()
+    {
+        Object TOImg = Resources.Load("Sprite/TO");
+        GameObject TO = (GameObject)Instantiate(TOImg);
+
+        return TO;
+    }
+
+    public GameObject ImgGameOver()
+    {
+        Object GOImg = Resources.Load("Sprite/GO");
+        GameObject GO = (GameObject)Instantiate(GOImg);
+
+        return GO;
     }
 }
+

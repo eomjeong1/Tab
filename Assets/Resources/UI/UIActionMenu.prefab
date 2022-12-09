@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 1645471476427803423}
   - component: {fileID: 1645471476427803422}
   - component: {fileID: 1645471476427803425}
+  - component: {fileID: 6436081183405282703}
   m_Layer: 5
   m_Name: UIActionMenu
   m_TagString: Untagged
@@ -867,3 +868,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6436081183405282703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5692304435030600322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2b6a27f9760c14eb7d319a12321d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnPractice: {fileID: 458710135378761684}
+  btnHealing: {fileID: 458710135328183892}
+  btnBattle: {fileID: 458710136699032059}
