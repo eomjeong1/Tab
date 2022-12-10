@@ -18,8 +18,9 @@ public class UIProFile : MonoBehaviour
     void Start()
     {
         RefreshState();
+        HPBarChange();
 
-     
+
 
     }
 
@@ -35,5 +36,13 @@ public class UIProFile : MonoBehaviour
         hpBar.maxValue = TabGameManager.GetInstance().totalHP;
         hpBar.value = TabGameManager.GetInstance().curHP;
         txtHP.text = $"{hpBar.value} / {hpBar.maxValue}";
+    }
+    public void HPBarChange()
+    {
+        if(TabGameManager.GetInstance().curHP < 40)
+            imgFill.color = Color.red;
+        else
+            imgFill.color = Color.green;
+
     }
 }

@@ -28,7 +28,6 @@ public class SCenesManager : MonoBehaviour
 
     #region Scene Control
     public Scene currentScene;
-    public Scene PrevScene;
     public void ChangeScene(Scene scene)
     {
         TabUI.GetInstance().ClearList(); // 씬이 바뀔때마다 UI매니저를 클리어해주겠다.

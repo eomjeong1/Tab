@@ -26,6 +26,8 @@ public class TabGameManager : MonoBehaviour
     public int totalHP = 100; // 증가
     public int curHP = 100; // 감소, 증가
 
+    
+
     public void AddGold(int gold)
     { 
         this.gold += gold;
@@ -60,7 +62,5 @@ public class TabGameManager : MonoBehaviour
  // Mathf.Clamp(curHP, 0, 100); 0보다 작으면 0으로 고정, 100보다 높으면 100으로 고정한다는 뜻. 위의 if함수 4줄을 한줄로 축약. 
     }
 
-
-
-
+  
 }

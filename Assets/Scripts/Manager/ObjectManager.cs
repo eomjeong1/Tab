@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class ObjectManager : MonoBehaviour
 {
+    
     #region SingletoneUI
     public static ObjectManager instance = null;
     public static ObjectManager GetInstance()
@@ -34,11 +35,31 @@ public class ObjectManager : MonoBehaviour
 
         return monster;
     }
+    public GameObject CreateMDie()
+    {
+        Object MonsterObj = Resources.Load("Sprite/MDie");
+        GameObject monster = (GameObject)Instantiate(MonsterObj);
+
+        return monster;
+    }
 
     public ParticleSystem CreateHitEffect()
     {
+        
         Object EffectObj = Resources.Load("Effect/Hit2");
         GameObject effect = (GameObject)Instantiate(EffectObj);
+        
+        
+
+        return effect.GetComponent<ParticleSystem>();
+    }
+    public ParticleSystem CreateHealEffect()
+    {
+
+        Object EffectObj = Resources.Load("Effect/Heal");
+        GameObject effect = (GameObject)Instantiate(EffectObj);
+
+
 
         return effect.GetComponent<ParticleSystem>();
     }
