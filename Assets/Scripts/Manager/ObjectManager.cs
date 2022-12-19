@@ -21,16 +21,16 @@ public class ObjectManager : MonoBehaviour
     }
     #endregion
 
-    public GameObject CreateCharacter()
+    public GameObject CreateCharacter(string characterName)
     {
-        Object characterObj = Resources.Load("Sprite/Character"); // 리소스폴더에서 스프라이트 - 캐릭터라는 친구를 로드할거야.
+        Object characterObj = Resources.Load("Sprite/" + characterName); // 리소스폴더에서 스프라이트 - 캐릭터라는 친구를 로드할거야.
         GameObject character = (GameObject)Instantiate(characterObj); //불러온 캐릭터라는 친구를 인스턴스화 할거야.
         return character; // void만 return이 없어도 가능하다.
     }
 
-    public GameObject CreateMonster()
+    public GameObject CreateMonster(string MonsterName)
     {
-        Object MonsterObj = Resources.Load("Sprite/Monster1");
+        Object MonsterObj = Resources.Load("Sprite/"+ MonsterName);
         GameObject monster = (GameObject)Instantiate(MonsterObj);
 
         return monster;

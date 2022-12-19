@@ -20,10 +20,26 @@ public class TabBattleManager : MonoBehaviour
         return instance;
     }
     #endregion
+
+    public Monster1[] monsterDatas = new Monster1[]
+        {
+            new Monster1("Monster1", 10, 30, 2.5f, 300),
+            new Monster1("Monster2", 15, 50, 2f, 1000)
+        };
+
+    public Monster1 GetRandomMonster()
+    { 
+        //                      0     ~            1
+        int rand = Random.Range(0, monsterDatas.Length);
+
+        return monsterDatas[rand];
+    }
     
     public Monster1 monsterData;
     public BattleScene BattleScene;
     GameObject uiTab;
+
+    public  EffectManager EM;
 
     public void Start()
     {
@@ -34,11 +50,12 @@ public class TabBattleManager : MonoBehaviour
 
     public void BattleStart(Monster1 monster)
     { 
+        
         monsterData = monster;
         
 
         TabUI.GetInstance().OpenUI("UITab");
-
+        EffectManager.GetInstance().InitEffectpool(7);
         
 
         StartCoroutine("BattleProgress");
@@ -98,17 +115,13 @@ public class TabBattleManager : MonoBehaviour
 
     public void AttackMonster()
     {
+        EffectManager.GetInstance().UseEffect();
         
-        
-        float Randx = Random.Range(-1.2f, 1.2f);
-        float Randy = Random.Range(-1f, -3f);
+        Debug.Log($"MonsterName : {monsterData.monsterName} Hp : {monsterData.hp}");
 
-        var particle = ObjectManager.GetInstance().CreateHitEffect();
-        //ParticleSystem particle = ObjectManager.GetInstance().CreateHitEffect(); 와 같음.
-        //함수 안에서만 가능.
-        particle.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-        particle.transform.localPosition = new Vector3(0 + Randx, 0 + Randy, 0);
-       
+
+
+
 
         monsterData.hp--;
         if (monsterData.hp <= 0)
